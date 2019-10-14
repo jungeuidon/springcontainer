@@ -19,6 +19,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- 자바표준(SR330) scanning, wiring annotation -->
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
+		</dependency>
+		
 		<!-- Test -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
