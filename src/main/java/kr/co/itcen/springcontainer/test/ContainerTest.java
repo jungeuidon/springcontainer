@@ -39,7 +39,19 @@ public class ContainerTest {
 		User user3 = (User)appCtxt.getBean( "user3" );
 		System.out.println(user3);
 		
+		// User() 으로 생성되고 프로퍼티 세팅을 한(setter) 빈 가져오기
+		User user4 = (User)appCtxt.getBean( "user4" );
+		System.out.println(user4);
+
+		// DI 설정한 빈 가져오기
+		User user5 = (User)appCtxt.getBean( "user5" );
+		System.out.println(user5);
+
+		// DI 설정한 빈 가져오기2
+		User user6 = (User)appCtxt.getBean( "user6" );
+		System.out.println(user6);
 		
+
 		((ConfigurableApplicationContext)appCtxt).close();
 	}
 	
