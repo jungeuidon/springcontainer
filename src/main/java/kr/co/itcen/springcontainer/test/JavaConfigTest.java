@@ -11,9 +11,10 @@ public class JavaConfigTest {
 
 	public static void main(String[] args) {
 		testUser01();
+		testUser02();
 	}
 
-	// Explicit(명시적) Java Config
+	// 1. Java Config Class를 명시한다. (Explicit Configuration)
 	public static void testUser01() {
 		ApplicationContext appCntx = 
 				new AnnotationConfigApplicationContext(UserConfig01.class);
@@ -23,4 +24,16 @@ public class JavaConfigTest {
 		
 		((ConfigurableApplicationContext)appCntx).close();
 	}
+	
+	//2. 자동으로 Java Config Class를 Scan한다. (auto-scan)
+	public static void testUser02() {
+		ApplicationContext appCntx = 
+				new AnnotationConfigApplicationContext("config.user");
+		
+		User user = appCntx.getBean(User.class);
+		System.out.println(user);
+		
+		((ConfigurableApplicationContext)appCntx).close();
+	}
+	
 }
