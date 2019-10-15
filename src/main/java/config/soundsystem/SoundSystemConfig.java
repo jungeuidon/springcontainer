@@ -1,4 +1,4 @@
-package kr.co.itcen.springcontainer.config.soundsystem;
+package config.soundsystem;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -15,6 +15,7 @@
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 		
 	<bean id="user1" class="kr.co.itcen.springcontainer.user.User" />
+	
 	<bean id="user2" name="usr2" class="kr.co.itcen.springcontainer.user.User" />
 	
 	<bean id="user3" class="kr.co.itcen.springcontainer.user.User">
@@ -37,7 +38,7 @@
 	<bean id="friend1" class="kr.co.itcen.springcontainer.user.Friend">
 		<constructor-arg value="희동이"/>
 	</bean>
-
+	
 	<bean id="user6" class="kr.co.itcen.springcontainer.user.User">
 		<property name="no" value="6"/>
 		<property name="name" value="둘리"/>

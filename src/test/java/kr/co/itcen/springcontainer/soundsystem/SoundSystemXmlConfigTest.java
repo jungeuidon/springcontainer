@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,13 +24,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:config/soundsystem/SoundSystemConfig.xml"})
 public class SoundSystemXmlConfigTest {
-	
+
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-	
+							//System적으로 String값이나 예약어를 바꾸는 역할. 다음줄이동 을 공백으로 바꾸었다.
 	@Autowired
+	@Qualifier("highSchoolRapper2Final")
 	private CompactDisc cd;
-	
+
 	@Autowired
 	private CDPlayer cdPlayer;
 	
@@ -37,7 +39,7 @@ public class SoundSystemXmlConfigTest {
 	public void testCDNull() {
 		assertNotNull(cd);
 	}
-	
+
 	@Test
 	public void testCDPlayer() {
 		assertNotNull(cdPlayer);

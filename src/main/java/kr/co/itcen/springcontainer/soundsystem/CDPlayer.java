@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 public class CDPlayer {
 	
 	// 와이어링1: @Autowired + 필드
-	@Autowired
-	@Qualifier("highSchoolRapper3Final")
+	//@Autowired
+	//@Qualifier("highSchoolRapper3Final")
 	private CompactDisc compactDisc;
 	
 	// 와이어링2: @Autowired + 생성자
@@ -25,7 +25,8 @@ public class CDPlayer {
 	}
 	
 	// 와이어링3: @Autowired + setter
-	// @Autowired
+	@Autowired
+	@Qualifier("highSchoolRapper2Final")
 	public void setCompactDisc(CompactDisc compactDisc) {
 		this.compactDisc = compactDisc;
 	}

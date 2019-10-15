@@ -2,6 +2,7 @@ package kr.co.itcen.springcontainer.soundsystem;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,11 +13,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.itcen.springcontainer.config.soundsystem.SoundSystemConfig;
+import config.soundsystem.SoundSystemConfig;
 
 /**
  *  Auto Configuration - Java Config
- *  Component Scanning( @Component, @Named, @Autowired, @Inject )
+ *  Scanning Component ( @Component, @Named, @Autowired, @Inject )
  *                      @Service
  *                      @Controller
  *                      @Repository
@@ -25,9 +26,10 @@ import kr.co.itcen.springcontainer.config.soundsystem.SoundSystemConfig;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {SoundSystemConfig.class})
 public class SoundSystemJavaConfigTest {
+
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-	
+
 	@Autowired
 	@Qualifier("highSchoolRapper3Final")
 	private CompactDisc cd;
@@ -35,7 +37,7 @@ public class SoundSystemJavaConfigTest {
 	@Autowired
 	private CDPlayer cdPlayer;
 
-	@Test
+	@Test 
 	public void testCDNull() {
 		assertNotNull(cd);
 	}
@@ -49,6 +51,7 @@ public class SoundSystemJavaConfigTest {
 	public void testPlay() {
 		cdPlayer.play();
 		assertEquals("Playing 지구멸망 by 양승호", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+																//	줄바꿈을 공백으로 사용하기.
 	}
 
 }

@@ -24,22 +24,23 @@ public class ContainerTest {
 		// User user1 = appCtxt.getBean(User.class);
 		
 		// id로 가져오기
-		User user1 = (User)appCtxt.getBean( "user1" );
+		User user1 = appCtxt.getBean( "user1" , User.class);
 		System.out.println(user1);
 		
 		// name으로 가져오기
 		User usr2 = (User)appCtxt.getBean( "usr2" );
 		System.out.println(usr2);
 		
-		// singleton 확인
+		// singleton 확인   (확인결과 같다)
 		User user2 = (User)appCtxt.getBean( "user2" );
 		System.out.println(usr2 == user2);
 		
 		// User(Long, String) 으로 생성된 빈 가져오기
+		// constructor-arg 로 설정해서 index로 no, name을 구별
 		User user3 = (User)appCtxt.getBean( "user3" );
 		System.out.println(user3);
 		
-		// User() 으로 생성되고 프로퍼티 세팅을 한(setter) 빈 가져오기
+		// User() 으로 생성되고 프로퍼티 세팅을 한(setter만 필요, getter는 굳이필요없다 ) 빈 가져오기
 		User user4 = (User)appCtxt.getBean( "user4" );
 		System.out.println(user4);
 
