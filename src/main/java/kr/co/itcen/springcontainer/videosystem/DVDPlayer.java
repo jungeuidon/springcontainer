@@ -1,21 +1,27 @@
 package kr.co.itcen.springcontainer.videosystem;
 
 public class DVDPlayer {
-	private DigitalVideoDisc digitalVideoDisc;
+	private DigitalVideoDisc dvd;
 
-	public DVDPlayer(DigitalVideoDisc digitalVideoDisc) {
-		this.digitalVideoDisc = digitalVideoDisc;
+	public DVDPlayer() {
 	}
 
-	public DigitalVideoDisc getDigitalVideoDisc() {
-		return digitalVideoDisc;
+	public DVDPlayer(DigitalVideoDisc dvd) {
+		this.dvd = dvd;
 	}
 
-	public void setDigitalVideoDisc(DigitalVideoDisc digitalVideoDisc) {
-		this.digitalVideoDisc = digitalVideoDisc;
+	
+	public DigitalVideoDisc getDvd() {
+		return dvd;
+	}
+
+	
+	public void setDvd(DigitalVideoDisc dvd) {
+		this.dvd = dvd;
 	}
 
 	public void play() {
-		digitalVideoDisc.play();
+		dvd.play();
+		
 	}
 }

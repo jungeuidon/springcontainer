@@ -3,13 +3,11 @@ package kr.co.itcen.springcontainer.videosystem;
 import java.util.List;
 
 public class BlankDisc implements DigitalVideoDisc {
-
 	private String title;
 	private String studio;
 	private List<String> actors;
-	
+
 	public BlankDisc() {
-		
 	}
 	
 	public BlankDisc(String title, String studio) {
@@ -17,13 +15,11 @@ public class BlankDisc implements DigitalVideoDisc {
 		this.studio = studio;
 	}
 	
-	
 	public BlankDisc(String title, String studio, List<String> actors) {
 		this.title = title;
 		this.studio = studio;
 		this.actors = actors;
 	}
-	
 	
 	public String getTitle() {
 		return title;
@@ -49,7 +45,6 @@ public class BlankDisc implements DigitalVideoDisc {
 		this.actors = actors;
 	}
 
-
 	@Override
 	public void play() {
 		System.out.println("Playing Movie " + studio + "'s " + title);	
@@ -60,6 +55,5 @@ public class BlankDisc implements DigitalVideoDisc {
 		return "BlankDisc [title=" + title + ", studio=" + studio + ", actors=" + actors + "]";
 	}
 
-	
 	
 }
