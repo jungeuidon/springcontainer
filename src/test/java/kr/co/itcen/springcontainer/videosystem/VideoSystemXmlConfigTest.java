@@ -1,6 +1,5 @@
 package kr.co.itcen.springcontainer.videosystem;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Rule;
@@ -13,32 +12,20 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import config.videosystem.DVDPlayerConfig;
 
-/*
- *  Explicit(명시적) Configuration - Java Config
- *  @Bean
- *  
- */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {DVDPlayerConfig.class})
-public class VideoSystemJavaConfigTest {
-	
+@ContextConfiguration(locations= {"classpath:config/videosystem/VideoSystemConfig.xml"})
+public class VideoSystemXmlConfigTest {
+
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 	
-	
-	
 	@Autowired
-	private DVDPlayer player;
-
-	@Test
-	public void testPlayerNull() {
-		assertNotNull(player);
-	}
+	DigitalVideoDisc dvd1;
 	
 	@Test
-	public void testPlay() {
-		player.play();
-		
-//		assertEquals("Playing Movie MARVEL's Avengers", systemOutRule.getLog().replace("\r\n", "").replace("\n", ""));
+	public void testDVD1Null() {
+		assertNotNull(dvd1);
 	}
+	
+	
 }
